@@ -2,9 +2,10 @@ class Node{
   private Integer data;
   private Node next, prev;
 
-  public Node(Integer val, prev, next){
-    data = val;
-    set
+  public Node(Integer val, Node otherNext , Node otherPrev){
+    this.setData(val);
+    this.next = otherNext;
+    this.prev = otherPrev;
   }
 
   public Node next(){
@@ -30,8 +31,10 @@ class Node{
     return this.data;
   }
 
-  public Integer setData(){
-    return this.data;
+  public Integer setData(Integer val){
+    Integer oldData = this.data;
+    this.data = val;
+    return oldData;
   }
 
   public String toString(){}
