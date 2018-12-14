@@ -5,4 +5,8 @@ class MyLinkedList{
   public int size();
   public boolean add(int value);
   public String toString();
+
+  public MyLinkedList(){
+    
+  }
 }
