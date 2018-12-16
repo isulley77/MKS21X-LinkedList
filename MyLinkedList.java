@@ -32,5 +32,19 @@ class MyLinkedList{
     size++;
   }
 
+  public Node getNthNode(int index){
+    int counter = 0;
+    Node currentNode = start;
+    while(currentNode != null){
+      if(counter == index){
+        return currentNode;
+      }
+      currentNode = currentNode.next();
+      counter++;
+
+    }
+    return currentNode;
+  }
+
 
 }
