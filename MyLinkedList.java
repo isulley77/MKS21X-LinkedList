@@ -71,5 +71,17 @@ class MyLinkedList{
     return false;
   }
 
+  public int indexOf(Integer value){
+    Node currentNode = start;
+    int counter = 0;
+    while(currentNode != null){
+      if(currentNode.getData().equals(value)){
+        return counter;
+      }
+      currentNode = currentNode.next();
+      counter++;
+    }
+  }
+
 
 }
