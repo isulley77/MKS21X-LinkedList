@@ -24,5 +24,13 @@ class MyLinkedList{
     return true;
   }
 
+  public void add(int index, Integer value){
+    if(index < 0 || index > size){
+      throw new IndexOutOfBoundsException();
+    }
+    Node n = new Node(value, getNthNode(index), getNthNode(index).previous); //requires getNthNode Method
+    size++;
+  }
+
 
 }
