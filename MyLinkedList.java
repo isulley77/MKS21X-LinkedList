@@ -60,5 +60,16 @@ class MyLinkedList{
     return getNthNode(index).setData(value);
   }
 
+  public boolean contains(Integer value){
+    Node currentNode = start;
+    while(currentNode != null){
+      if(currentNode.getData().equals(value)){
+        return true;
+      }
+      currentNode = currentNode.next();
+    }
+    return false;
+  }
+
 
 }
