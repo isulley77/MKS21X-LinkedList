@@ -25,14 +25,14 @@ class MyLinkedList{
   }
 
   public void add(int index, Integer value){
-    if(index < 0 || index > size){
+    if(index < 0 || index > size()){
       throw new IndexOutOfBoundsException();
     }
     Node n = new Node(value, getNthNode(index), getNthNode(index).previous); //requires getNthNode Method
     size++;
   }
 
-  public Node getNthNode(int index){
+  private Node getNthNode(int index){
     int counter = 0;
     Node currentNode = start;
     while(currentNode != null){
@@ -44,6 +44,13 @@ class MyLinkedList{
 
     }
     return currentNode;
+  }
+
+  public Integer get(int index){
+    if(index < 0 || index > size()){
+      throw new IndexOutOfBoundsException();
+    }
+    getNthNode(index).getData();
   }
 
 
