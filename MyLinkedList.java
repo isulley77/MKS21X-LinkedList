@@ -19,7 +19,9 @@ class MyLinkedList{
       end = start;
       return true;
     }
-return false;
+    Node n = new Node(value, null, end);
+    size++;
+    return true;
   }
 
 
