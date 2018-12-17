@@ -109,5 +109,12 @@ class MyLinkedList{
     return true;
   }
 
-
+  public String toString(){
+    String str = "[";
+    for(int i = 0; i < size(); i++){
+      str += getNthNode(i).getData() + ", ";
+    }
+    str += "]";
+    return str;
+  }
 }
