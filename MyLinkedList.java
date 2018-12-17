@@ -50,7 +50,7 @@ class MyLinkedList{
     if(index < 0 || index > size()){
       throw new IndexOutOfBoundsException();
     }
-    getNthNode(index).getData();
+    return getNthNode(index).getData();
   }
 
   public Integer set(int index, Integer value){
@@ -94,6 +94,19 @@ class MyLinkedList{
     getNthNode(index - 1).setNext(getNthNode(index + 1));
     size--;
     return oldData;
+  }
+
+  public boolean remove(Integer value){
+    if(!contains(value)){
+      return false;
+    }
+    Node currentNode = start;
+    while(currentNode.getData() != value){
+      currentNode = currentNode.next();
+    }
+    currentNode.previous().setNext(currentNode.next());
+    size--;
+    return true;
   }
 
 
