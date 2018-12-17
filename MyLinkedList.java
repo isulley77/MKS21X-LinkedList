@@ -28,7 +28,7 @@ class MyLinkedList{
     if(index < 0 || index > size()){
       throw new IndexOutOfBoundsException();
     }
-    Node n = new Node(value, getNthNode(index), getNthNode(index).previous); //requires getNthNode Method
+    Node n = new Node(value, getNthNode(index), getNthNode(index).previous()); //requires getNthNode Method
     size++;
   }
 
@@ -81,6 +81,19 @@ class MyLinkedList{
       currentNode = currentNode.next();
       counter++;
     }
+    return -1;
+  }
+
+  public Integer remove(int index){
+    if(index < 0 || index > size()){
+      throw new IndexOutOfBoundsException();
+    }
+
+    Integer oldData = getNthNode(index).getData();
+
+    getNthNode(index - 1).setNext(getNthNode(index + 1));
+    size--;
+    return oldData;
   }
 
 
