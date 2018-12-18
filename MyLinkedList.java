@@ -21,6 +21,7 @@ class MyLinkedList{
     }
     Node n = new Node(value, null, end);
     size++;
+    end = n;
     return true;
   }
 
@@ -30,6 +31,9 @@ class MyLinkedList{
     }
     Node n = new Node(value, getNthNode(index), getNthNode(index).previous()); //requires getNthNode Method
     size++;
+    if(index == size - 1){
+      end = n;
+    }
   }
 
   private Node getNthNode(int index){
@@ -111,10 +115,17 @@ class MyLinkedList{
 
   public String toString(){
     String str = "[";
-    for(int i = 0; i < size(); i++){
-      str += getNthNode(i).getData() + ", ";
+    Node currentNode = start;
+    while(currentNode != null){
+      str += currentNode.getData() + ", ";
+      currentNode = currentNode.next();
     }
     str += "]";
     return str;
+  }
+
+  public void extend(MyLinkedList other){
+
+
   }
 }
